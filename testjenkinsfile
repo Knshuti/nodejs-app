@@ -1,9 +1,9 @@
 pipeline {
-    agent any
+    agent {docker { image 'node:9.8.0'} }
 
     stages {
         stage('Dep install') {
-            agent {docker { image 'node:9.8.0'} }
+            
             steps {
                // sh 'sudo chown -R 995:993 "/.npm"'
                 sh 'npm install'
